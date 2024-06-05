@@ -11,17 +11,27 @@ pipeline {
 	    
     }
      stages {
-        stage('Build and Push Docker Image') {
+        stage('Build Docker Image') {
             steps {
                 script {
                 	// Navigate to the directory contains Dockerfile
                  	dir('app') {
-                 		buildandPushDockerImage("${dockerHubCredentialsID}", "${imageName}")
-                        
+                 		buildDockerImage("${imageName}")
                     	}
                 }
             }
         }
+        stage('push Docker Image') {
+            steps {
+                script {
+                	// Navigate to the directory contains Dockerfile
+                 	dir('app') {
+                 		pushDockerImage("${dockerHubCredentialsID}", "${imageName}")
+                    	}
+                }
+            }
+        }
+
 
         stage('Deploy on OpenShift Cluster') {
             steps {
