@@ -17,6 +17,7 @@ RUN ./gradlew dependencies
 COPY . .
 
 # Build the application using the Gradle Wrapper
+RUN chmod +x ./gradlew
 RUN ./gradlew build --stacktrace
 
 # Use a minimal base image for the runtime
@@ -29,7 +30,7 @@ WORKDIR /app
 COPY --from=build /app/build/libs/demo-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the port your app runs on
-EXPOSE 8081
+EXPOSE 8090
 
 # Define the command to run your application
 CMD ["java", "-jar", "app.jar"]
