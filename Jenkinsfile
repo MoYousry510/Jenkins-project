@@ -5,7 +5,7 @@ pipeline {
     environment {
         dockerHubCredentialsID	    = 'DockerHub'  		    			// DockerHub credentials ID.
         imageName   		    = 'engyousry/ivolve-app'     			// DockerHub repo/image name.
-	openshiftCredentialsID	    = 'openshiftCredentialsID'		    			// service account token credentials ID
+	openshiftCredentialsID	    = 'openshiftCredentialsID'		    		// service account token credentials ID
 	openshiftClusterURL	    = 'https://api.ocp-training.ivolve-test.com:6443'   // OpenShift Cluser URL.
         openshiftProject 	    = 'mohamedyousry'			     		// OpenShift project name.
 
