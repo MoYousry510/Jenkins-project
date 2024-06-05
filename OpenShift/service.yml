@@ -6,7 +6,10 @@ metadata:
 spec:
   selector:
     app: ivolve-app
+    
   ports:
     - protocol: TCP
       port: 8090
       targetPort: 8090
+      
+  type: NodePort    
