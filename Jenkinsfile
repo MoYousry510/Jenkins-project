@@ -8,7 +8,7 @@ pipeline {
 	openshiftCredentialsID	    = 'openshiftCredentialsID'		    			// service account token credentials ID
 	openshiftClusterURL	    = 'https://api.ocp-training.ivolve-test.com:6443'   // OpenShift Cluser URL.
         openshiftProject 	    = 'mohamedyousry'			     		// OpenShift project name.
-	    
+
     }
      stages {
         stage('Build Docker Image') {
