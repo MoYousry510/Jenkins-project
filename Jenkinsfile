@@ -7,7 +7,7 @@ pipeline {
         imageName   		    = 'engyousry/ivolve-app'     			// DockerHub repo/image name.
 	openshiftCredentialsID	    = 'openshiftCredentialsID'		    			// service account token credentials ID
 	openshiftClusterURL	    = 'https://api.ocp-training.ivolve-test.com:6443'   // OpenShift Cluser URL.
-        openshifProject 	    = 'mohamedyousry'			     		// OpenShift project name.
+        openshiftProject 	    = 'mohamedyousry'			     		// OpenShift project name.
 	    
     }
      stages {
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script { 
                 	dir('OpenShift') {
-				deployOnOpenShift("${openshiftCredentialsID}", "${openshiftCluster}", "${openshifProject}", "${imageName}")
+				deployOnOpenShift("${openshiftCredentialsID}", "${openshiftClusterURL}", "${openshiftProject}", "${imageName}")
                     	}
                 }
             }
