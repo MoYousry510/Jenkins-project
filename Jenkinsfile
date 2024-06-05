@@ -10,7 +10,7 @@ pipeline {
         openshifProject 	    = 'mohamedyousry'			     		// OpenShift project name.
 	    
     }
-    
+     stages {
         stage('Build and Push Docker Image') {
             steps {
                 script {
@@ -42,4 +42,4 @@ pipeline {
             echo "${JOB_NAME}-${BUILD_NUMBER} pipeline failed"
         }
     }
-
+}
